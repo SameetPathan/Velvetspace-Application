@@ -1,0 +1,417 @@
+/* Career.css */
+.career-page {
+    overflow-x: hidden;
+    margin-top: 80px;
+  }
+  
+  /* Hero Section */
+  .career-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px 100px;
+    text-align: center;
+    background: linear-gradient(135deg, #1c1c1c 0%, #2d2d2d 100%);
+    overflow: hidden;
+  }
+  
+  .career-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(120deg, rgba(138, 35, 135, 0.4) 0%, rgba(233, 64, 87, 0.4) 50%, rgba(242, 113, 33, 0.4) 100%);
+    animation: gradientMove 15s infinite alternate;
+    z-index: 1;
+  }
+  
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: textGradient 5s infinite alternate;
+  }
+  
+  @keyframes textGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .add-job-btn {
+    background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(233, 64, 87, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .add-job-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(233, 64, 87, 0.4);
+    background: linear-gradient(135deg, #7A1377 0%, #D93047 50%, #E26111 100%);
+  }
+  
+  .shape-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+  }
+  
+  .shape-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 80px;
+  }
+  
+  .shape-divider .shape-fill {
+    fill: #f5f5f5;
+  }
+  
+  /* Jobs Section */
+  .jobs-section {
+    padding: 100px 0;
+    background-color: #f5f5f5;
+  }
+  
+  .jobs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .job-card-wrapper {
+    width: 100%;
+  }
+  
+  .job-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  .delete-button_r {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 0, 0, 0.7);
+    border: none;
+    z-index: 10;
+  }
+  
+  .job-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-icon {
+    font-size: 2rem;
+    color: #E94057;
+    margin-right: 15px;
+    padding: 10px;
+    background-color: rgba(233, 64, 87, 0.1);
+    border-radius: 12px;
+  }
+  
+  .job-card .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .job-location, .job-salary, .job-type {
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .job-section {
+    margin-bottom: 20px;
+  }
+  
+  .job-section h5 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.1rem;
+  }
+  
+  .job-section .card-text {
+    white-space: pre-line;
+    color: #666;
+  }
+  
+  .contact-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .email-button, .call-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex-grow: 1;
+  }
+  
+  .email-button {
+    background-color: rgba(138, 35, 135, 0.1);
+    color: #8A2387;
+    border: none;
+  }
+  
+  .email-button:hover {
+    background-color: #8A2387;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(138, 35, 135, 0.2);
+  }
+  
+  .call-button {
+    background-color: rgba(233, 64, 87, 0.1);
+    color: #E94057;
+    border: none;
+  }
+  
+  .call-button:hover {
+    background-color: #E94057;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(233, 64, 87, 0.2);
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(138, 35, 135, 0.05) 0%, rgba(233, 64, 87, 0.05) 50%, rgba(242, 113, 33, 0.05) 100%);
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .separator {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+    margin: 0 auto 30px;
+    border-radius: 2px;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 30px;
+  }
+  
+  .cta-button {
+    background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 8px 20px rgba(233, 64, 87, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(233, 64, 87, 0.4);
+    background: linear-gradient(135deg, #7A1377 0%, #D93047 50%, #E26111 100%);
+  }
+  
+  /* Job Modal */
+  .job-modal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-modal .modal-header {
+    background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: none;
+  }
+  
+  .job-modal .modal-header .close {
+    color: white;
+  }
+  
+  .job-modal .modal-title {
+    font-weight: 700;
+  }
+  
+  .submit-button {
+    background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .submit-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #7A1377 0%, #D93047 50%, #E26111 100%);
+    box-shadow: 0 5px 15px rgba(233, 64, 87, 0.3);
+  }
+  
+  .submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Delete Modal */
+  .delete-modal .modal-content {
+    border-radius: 15px;
+    border: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .section-title {
+      font-size: 2.2rem;
+    }
+    
+    .contact-buttons {
+      flex-direction: column;
+    }
+    
+    .email-button, .call-button {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+    }
+    
+    .job-meta {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .job-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .job-icon {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }

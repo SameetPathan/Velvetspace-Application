@@ -1,0 +1,114 @@
+/* ReferAFriend.css */
+.referral-page {
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffefef 0%, #ffd6e0 100%);
+  padding: 40px 0;
+}
+
+/* Card styling */
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  margin-top: 50px;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+  padding: 20px;
+  border: none;
+}
+
+.card-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 30px;
+  background-color: white;
+}
+
+/* Form Elements */
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #E94057;
+  box-shadow: 0 0 0 0.25rem rgba(233, 64, 87, 0.25);
+}
+
+/* Referral ID Box */
+.referral-id-box {
+  background: linear-gradient(135deg, rgba(255, 214, 224, 0.3) 0%, rgba(255, 239, 239, 0.3) 100%);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 25px;
+  border: 1px dashed rgba(233, 64, 87, 0.3);
+}
+
+.referral-id-box h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.referral-id {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* WhatsApp Button */
+.btn-success {
+  background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 8px 15px rgba(37, 211, 102, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(37, 211, 102, 0.3);
+  background: linear-gradient(135deg, #1eb45a 0%, #0e6a5e 100%);
+}
+
+.btn-success:disabled {
+  background: #cccccc;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .referral-id {
+    font-size: 1.4rem;
+  }
+}

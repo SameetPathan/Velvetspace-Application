@@ -1,0 +1,16 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded square background with gradient -->
+  <rect width="32" height="32" rx="8" fill="url(#brand-gradient)"/>
+  
+  <!-- VS Letters -->
+  <path d="M11.6 21L15.75 11H13.25L9.1 21H11.6ZM22.9 21L19.5 16.6L22.65 13H19.6L17.15 15.9V13H14.9V21H17.15V19.2L18.05 18.15L20.5 21H22.9Z" fill="white"/>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="brand-gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8A2387"/>
+      <stop offset="0.5" stop-color="#E94057"/>
+      <stop offset="1" stop-color="#F27121"/>
+    </linearGradient>
+  </defs>
+</svg>
