@@ -70,10 +70,10 @@ const Home = () => {
           </h1>
           <p className="hero-subtitle">Smart and efficient home interiors with superior quality materials</p>
           <div className="hero-buttons">
-            <Button className="hero-button primary-button">
+            <Button href="tel:+918867572229" className="hero-button primary-button">
               Explore Our Designs
             </Button>
-            <Button className="hero-button secondary-button">
+            <Button href="tel:+918867572229" className="hero-button secondary-button">
               Contact Us
             </Button>
           </div>
@@ -120,7 +120,7 @@ const Home = () => {
                 <h2 className="section-title">One Stop Shop For All Effects Home Innards</h2>
                 <div className="separator"></div>
                 <p className="section-text">Whether it's a magazine-such like dream kitchen or your entire home, enjoy end-to-end results from design to installation.</p>
-                <Button className="action-button">Learn More</Button>
+      
               </motion.div>
             </Col>
             <Col lg={6} md={12}>
@@ -258,9 +258,7 @@ const Home = () => {
                 <h2 className="cta-title">Ready to Transform Your Living Space?</h2>
                 <p className="cta-text">Get in touch with our design experts today and start your journey to a beautiful home.</p>
               </Col>
-              <Col lg={4} md={5} className="text-md-end">
-                <Button className="cta-button">Get a Free Consultation</Button>
-              </Col>
+        
             </Row>
           </motion.div>
         </Container>

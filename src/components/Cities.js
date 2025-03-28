@@ -169,9 +169,7 @@ function Cities() {
                       >
                         Get Directions
                       </Button>
-                      <Button className="appointment-button">
-                        Book Appointment <FaArrowRight className="ms-2" />
-                      </Button>
+                      
                     </div>
                   </Card.Body>
                 </Card>
@@ -197,9 +195,7 @@ function Cities() {
                 <p className="section-subtitle">
                   Schedule a virtual consultation or request a home visit from our design experts
                 </p>
-                <Button className="contact-button">
-                  Request Virtual Consultation
-                </Button>
+                
               </motion.div>
             </Col>
           </Row>

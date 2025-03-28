@@ -226,19 +226,8 @@ function Offerings() {
                 <div className="package-description">
                   <p>High quality, budget-friendly modular solutions like kitchens, wardrobes, and more in your favourite colours, and designs.</p>
                 </div>
-                
-                <div className="package-features">
-                  {eliteFeatures.map((feature, index) => (
-                    <div className="feature-item" key={index}>
-                      <FaCheck className="check-icon" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <Button className="package-button">
-                  Explore Elite <FaArrowRight className="ms-2" />
-                </Button>
+
+              
               </motion.div>
             </Col>
             
@@ -267,18 +256,9 @@ function Offerings() {
                   <p>Get the complete home interior experience with award-winning designers, service partners, and the best brands.</p>
                 </div>
                 
-                <div className="package-features">
-                  {cozyFeatures.map((feature, index) => (
-                    <div className="feature-item" key={index}>
-                      <FaCheck className="check-icon" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
+               
                 
-                <Button className="package-button premium">
-                  Explore Cozy <FaArrowRight className="ms-2" />
-                </Button>
+ 
               </motion.div>
             </Col>
           </Row>
@@ -300,11 +280,7 @@ function Offerings() {
                 <h2 className="cta-title">Ready to Transform Your Space?</h2>
                 <p className="cta-text">Get a personalized quote for your dream interior project today.</p>
               </Col>
-              <Col lg={4} md={5} className="text-md-end">
-                <Button className="cta-button">
-                  Get Free Quote <FaArrowRight className="ms-2" />
-                </Button>
-              </Col>
+            
             </Row>
           </motion.div>
         </Container>

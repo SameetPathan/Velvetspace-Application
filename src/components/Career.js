@@ -388,7 +388,7 @@ function Career() {
                 </p>
                 <Button 
                   className="cta-button"
-                  href={`mailto:careers@velvetspace.in`}
+                  href={`mailto:admin@velvetspace.in`}
                 >
                   <FaEnvelope className="me-2" /> Send Your Resume
                 </Button>

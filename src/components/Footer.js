@@ -112,25 +112,9 @@ function Footer() {
                   At Velvetspace, we believe that interior design is more than great functionality and beautiful aesthetics. 
                   We aim to make your home interiors a reflection of your personality.
                 </p>
-                <Button className="consultation-btn">Book Design Consultation</Button>
+               
                 
-                <div className="social-links">
-                  <a href="#" className="social-link">
-                    <FaFacebookF />
-                  </a>
-                  <a href="#" className="social-link">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" className="social-link">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" className="social-link">
-                    <FaLinkedinIn />
-                  </a>
-                  <a href="#" className="social-link">
-                    <FaPinterestP />
-                  </a>
-                </div>
+
               </div>
             </Col>
           </Row>

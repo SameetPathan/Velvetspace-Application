@@ -264,7 +264,7 @@ function Spaces() {
                 <p className="cta-text">
                   Ready to bring these stunning designs to your home? Our expert team is ready to help.
                 </p>
-                <button className="cta-button">Schedule a Consultation</button>
+                
               </motion.div>
             </Col>
           </Row>

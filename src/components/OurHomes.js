@@ -409,9 +409,7 @@ function OurHomes() {
                 <p className="section-subtitle">
                   Join our happy customers with a home interior design that perfectly matches your style.
                 </p>
-                <Button className="cta-button">
-                  Start Your Home Journey
-                </Button>
+             
               </motion.div>
             </Col>
           </Row>

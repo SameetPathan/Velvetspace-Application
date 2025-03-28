@@ -136,7 +136,7 @@ const AuthForm = ({ mode, onSuccess, onError }) => {
                 
                 <Form.Group className="mb-3 form-group">
                   <div className="input-icon-wrapper">
-                    <FaUser className="input-icon" />
+                   
                     <Form.Control
                       type="text"
                       placeholder="Full Name"
@@ -158,7 +158,7 @@ const AuthForm = ({ mode, onSuccess, onError }) => {
             
             <Form.Group className="mb-3 form-group">
               <div className="input-icon-wrapper">
-                <FaEnvelope className="input-icon" />
+                
                 <Form.Control
                   type="email"
                   placeholder="Email address"
@@ -172,7 +172,7 @@ const AuthForm = ({ mode, onSuccess, onError }) => {
             
             <Form.Group className="mb-3 form-group">
               <div className="input-icon-wrapper">
-                <FaLock className="input-icon" />
+               
                 <Form.Control
                   type="password"
                   placeholder="Password"
@@ -187,7 +187,7 @@ const AuthForm = ({ mode, onSuccess, onError }) => {
             {mode === 'signup' && (
               <Form.Group className="mb-3 form-group">
                 <div className="input-icon-wrapper">
-                  <FaLock className="input-icon" />
+                 
                   <Form.Control
                     type="password"
                     placeholder="Confirm Password"

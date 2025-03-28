@@ -221,12 +221,7 @@ function HowItWorks() {
                 <h2 className="cta-title">Ready to Transform Your Space?</h2>
                 <p className="cta-text">Begin your journey to a beautiful home with our expert team today.</p>
               </Col>
-              <Col lg={4} md={5} className="text-md-end">
-                <button className="cta-button">
-                  <span>Get Started</span>
-                  <FaArrowRight className="ms-2" />
-                </button>
-              </Col>
+              
             </Row>
           </motion.div>
         </Container>
