@@ -1,9 +1,11 @@
-/* NavigationBar.css - Enhanced version without Container */
+/* NavigationBar.css - Bright Modern Version with Always Solid Appearance */
 .navbar-custom {
   transition: all 0.3s ease;
   padding: 0.75rem 1rem;
   font-family: 'Poppins', sans-serif;
   width: 100%;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Navbar inner wrapper to replace Container */
@@ -15,16 +17,16 @@
   padding: 0 2rem;
 }
 
-/* Transparent navbar for home page */
+/* Remove transparent navbar styling - always using solid */
 .navbar-transparent {
-  background-color: transparent;
-  box-shadow: none;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Solid navbar for other pages and when scrolled - with gradient background */
+/* Solid navbar for all pages and all scroll positions */
 .navbar-solid, .navbar-transparent.scrolled {
-  background: linear-gradient(to right, #1c1c1c 0%, #2d2d2d 100%);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Logo styling */
@@ -32,7 +34,7 @@
   display: flex;
   align-items: center;
   font-weight: 700;
-  color: #fff;
+  color: #343a40;
   margin-right: 2rem;
 }
 
@@ -40,7 +42,7 @@
   height: 44px;
   width: 44px;
   margin-right: 12px;
-  background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 50%, #B06CDA 100%);
   color: white;
   display: flex;
   align-items: center;
@@ -48,7 +50,7 @@
   font-weight: bold;
   border-radius: 12px;
   font-size: 20px;
-  box-shadow: 0 6px 15px rgba(233, 64, 87, 0.4);
+  box-shadow: 0 6px 15px rgba(142, 84, 233, 0.3);
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
@@ -67,14 +69,14 @@
 
 .brand-text {
   font-size: 1.6rem;
-  background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 50%, #B06CDA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 0.5px;
   font-weight: 800;
   margin-left: 5px;
   position: relative;
-  text-shadow: 0 5px 15px rgba(233, 64, 87, 0.2);
+  text-shadow: 0 5px 15px rgba(142, 84, 233, 0.2);
 }
 
 /* Main navigation */
@@ -86,7 +88,7 @@
 
 /* Nav links */
 .navbar-custom .nav-link {
-  color: #e0e0e0;
+  color: #495057;
   font-weight: 500;
   padding: 0.6rem 1rem;
   position: relative;
@@ -98,15 +100,15 @@
 }
 
 .navbar-custom .nav-link:hover {
-  color: #fff;
-  background-color: rgba(233, 64, 87, 0.2);
+  color: #8E54E9;
+  background-color: rgba(142, 84, 233, 0.1);
   transform: translateY(-2px);
 }
 
 .navbar-custom .nav-link.active {
-  color: #fff;
-  background: linear-gradient(135deg, rgba(138, 35, 135, 0.2) 0%, rgba(233, 64, 87, 0.2) 50%, rgba(242, 113, 33, 0.2) 100%);
-  box-shadow: 0 4px 10px rgba(233, 64, 87, 0.2);
+  color: #8E54E9;
+  background: linear-gradient(135deg, rgba(71, 118, 230, 0.1) 0%, rgba(142, 84, 233, 0.1) 50%, rgba(176, 108, 218, 0.1) 100%);
+  box-shadow: 0 4px 10px rgba(142, 84, 233, 0.1);
 }
 
 .navbar-custom .nav-link.active::after {
@@ -117,23 +119,24 @@
   transform: translateX(-50%);
   width: 20px;
   height: 3px;
-  background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 50%, #B06CDA 100%);
   border-radius: 3px;
 }
 
-.navbar-transparent:not(.scrolled) .nav-link {
-  color: #fff;
+/* Remove transparent navbar text colors - always using solid colors */
+.navbar-transparent .nav-link {
+  color: #495057;
 }
 
-.navbar-transparent:not(.scrolled) .nav-link:hover,
-.navbar-transparent:not(.scrolled) .nav-link.active {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.navbar-transparent .nav-link:hover,
+.navbar-transparent .nav-link.active {
+  color: #8E54E9;
+  background-color: rgba(142, 84, 233, 0.1);
+  box-shadow: 0 4px 10px rgba(142, 84, 233, 0.1);
 }
 
-.navbar-transparent:not(.scrolled) .nav-link.active::after {
-  background: #fff;
+.navbar-transparent .nav-link.active::after {
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 50%, #B06CDA 100%);
 }
 
 .nav-icon {
@@ -144,7 +147,30 @@
 
 .nav-link:hover .nav-icon {
   transform: translateY(-2px);
-  color: #F27121;
+  color: #B06CDA;
+}
+
+/* Custom Navbar Toggle Button */
+.navbar-toggler-custom {
+  border: none;
+  padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  position: relative;
+  z-index: 1050; /* Higher z-index to keep it above the collapsed menu */
+}
+
+.navbar-toggler-custom:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.navbar-toggler-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(142, 84, 233, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  transition: all 0.3s;
+}
+
+.navbar-toggler-custom[aria-expanded="true"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(142, 84, 233, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6L24 24M6 24L24 6'/%3e%3c/svg%3e");
 }
 
 /* Auth buttons */
@@ -165,9 +191,9 @@
 }
 
 .signin-button {
-  border: 2px solid #E94057;
-  color: #fff;
-  background-color: rgba(233, 64, 87, 0.1);
+  border: 2px solid #8E54E9;
+  color: #8E54E9;
+  background-color: rgba(142, 84, 233, 0.05);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -180,16 +206,16 @@
   left: 0;
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, rgba(138, 35, 135, 0.2) 0%, rgba(233, 64, 87, 0.2) 100%);
+  background: linear-gradient(90deg, rgba(71, 118, 230, 0.1) 0%, rgba(142, 84, 233, 0.1) 100%);
   transition: all 0.3s ease;
   z-index: -1;
 }
 
 .signin-button:hover {
-  color: #fff;
-  border-color: #E94057;
+  color: #8E54E9;
+  border-color: #8E54E9;
   transform: translateY(-3px);
-  box-shadow: 0 7px 14px rgba(233, 64, 87, 0.3);
+  box-shadow: 0 7px 14px rgba(142, 84, 233, 0.2);
 }
 
 .signin-button:hover::before {
@@ -197,7 +223,7 @@
 }
 
 .signup-button {
-  background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 50%, #B06CDA 100%);
   border: none;
   color: white;
   position: relative;
@@ -218,26 +244,65 @@
 
 .signup-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(233, 64, 87, 0.4);
+  box-shadow: 0 10px 20px rgba(142, 84, 233, 0.3);
 }
 
 /* Navbar divider */
 .nav-divider {
   height: 28px;
   width: 2px;
-  background: linear-gradient(to bottom, rgba(233, 64, 87, 0.3), rgba(242, 113, 33, 0.3));
+  background: linear-gradient(to bottom, rgba(71, 118, 230, 0.3), rgba(176, 108, 218, 0.3));
   margin: 0 15px;
   border-radius: 1px;
 }
 
-.navbar-transparent:not(.scrolled) .nav-divider {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+/* Update the divider to always use solid style */
+.navbar-transparent .nav-divider {
+  background: linear-gradient(to bottom, rgba(71, 118, 230, 0.3), rgba(176, 108, 218, 0.3));
 }
 
 /* User nav section */
 .user-nav-section {
   display: flex;
   align-items: center;
+}
+
+/* Auth Modal */
+.auth-modal .modal-header {
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 50%, #B06CDA 100%);
+  color: white;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.auth-modal .modal-content {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.auth-modal .close {
+  color: white;
+  opacity: 0.8;
+}
+
+.auth-modal .close:hover {
+  opacity: 1;
+}
+
+.auth-toggle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-toggle .btn-link {
+  color: #8E54E9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-toggle .btn-link:hover {
+  text-decoration: underline;
 }
 
 /* Responsive adjustments */
@@ -247,8 +312,8 @@
   }
   
   .navbar-custom {
-    background: linear-gradient(to right, #1c1c1c 0%, #2d2d2d 100%) !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   }
   
   .navbar-collapse {
@@ -256,10 +321,12 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: linear-gradient(to right, #1c1c1c 0%, #2d2d2d 100%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     z-index: 1000;
     padding: 1rem;
+    max-height: 80vh;
+    overflow-y: auto;
   }
   
   .nav-divider {
@@ -294,7 +361,7 @@
   
   .navbar-custom .nav-link:hover,
   .navbar-custom .nav-link.active {
-    border-left: 3px solid #E94057;
+    border-left: 3px solid #8E54E9;
     transform: none;
     border-radius: 0;
   }
@@ -302,12 +369,30 @@
   .navbar-custom .nav-link.active::after {
     display: none;
   }
+  
+  /* Fix for the navbar toggle button to always be visible */
+  .navbar-toggler-custom {
+    display: block;
+    position: fixed;
+    right: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  /* When menu is expanded, style the toggle button accordingly */
+  .navbar-toggler-custom[aria-expanded="true"] {
+    background-color: #f8f9fa;
+  }
 }
 
-/* Additional styling for body to match dark navbar */
+/* Additional styling for body to match light navbar */
 body {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
+  color: #495057;
 }
 
 /* Add a subtle background pattern */
@@ -318,7 +403,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e0e0e0' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238e54e9' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   z-index: -1;
   opacity: 0.3;
 }

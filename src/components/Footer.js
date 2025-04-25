@@ -51,7 +51,7 @@ function Footer() {
                   <li>
                     <FaEnvelope className="contact-icon" />
                     <div>
-                      <p>admin@velvetspace.in</p>
+                      <a href="mailto:admin@velvetspace.in" className="email-link">admin@velvetspace.in</a>
                     </div>
                   </li>
                 </ul>
@@ -59,14 +59,18 @@ function Footer() {
                 <div className="customer-care">
                   <h5>Customer Care</h5>
                   <div className="phone-numbers">
-                    <div className="phone-item">
-                      <FaPhoneAlt className="phone-icon" />
-                      <a href="tel:+918867572229">+91 88675-72229</a>
-                    </div>
-                    <div className="phone-item">
-                      <FaPhoneAlt className="phone-icon" />
-                      <a href="tel:+918867532229">+91 88675-32229</a>
-                    </div>
+                    <a href="tel:+918867572229" className="phone-link">
+                      <div className="phone-item">
+                        <FaPhoneAlt className="phone-icon" />
+                        <span>+91 88675-72229</span>
+                      </div>
+                    </a>
+                    <a href="tel:+918867532229" className="phone-link">
+                      <div className="phone-item">
+                        <FaPhoneAlt className="phone-icon" />
+                        <span>+91 88675-32229</span>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -74,10 +78,6 @@ function Footer() {
             
             <Col lg={2} md={6} className="mb-5 mb-lg-0">
               <div className="footer-links">
-              
-               
-             
-           
               </div>
             </Col>
             
@@ -112,9 +112,6 @@ function Footer() {
                   At Velvetspace, we believe that interior design is more than great functionality and beautiful aesthetics. 
                   We aim to make your home interiors a reflection of your personality.
                 </p>
-               
-                
-
               </div>
             </Col>
           </Row>

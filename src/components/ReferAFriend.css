@@ -1,114 +1,355 @@
-/* ReferAFriend.css */
+/* ReferAFriend.css - Bright Modern Version */
 .referral-page {
   overflow-x: hidden;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #ffefef 0%, #ffd6e0 100%);
-  padding: 40px 0;
 }
 
-/* Card styling */
-.card {
-  border: none;
+/* Hero Section */
+.referral-hero {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 100px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  overflow: hidden;
+}
+
+.referral-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(120deg, rgba(71, 118, 230, 0.2) 0%, rgba(142, 84, 233, 0.2) 50%, rgba(176, 108, 218, 0.2) 100%);
+  animation: gradientMove 15s infinite alternate;
+  z-index: 0;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.z-index-1 {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #343a40;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 50%, #B06CDA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textGradient 5s infinite alternate;
+}
+
+@keyframes textGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #495057;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shape-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+
+.shape-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.shape-divider .shape-fill {
+  fill: #ffffff;
+}
+
+/* Referral Form Section */
+.referral-form-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.referral-card {
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  margin-top: 50px;
-}
-
-.card-header {
-  background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
-  padding: 20px;
-  border: none;
-}
-
-.card-header h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.card-body {
-  padding: 30px;
-  background-color: white;
-}
-
-/* Form Elements */
-.form-label {
-  font-weight: 600;
-  color: #333;
-}
-
-.form-control {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  background-color: #f8f9fa;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(142, 84, 233, 0.1);
   transition: all 0.3s ease;
 }
 
-.form-control:focus {
-  border-color: #E94057;
-  box-shadow: 0 0 0 0.25rem rgba(233, 64, 87, 0.25);
+.referral-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(142, 84, 233, 0.15);
 }
 
-/* Referral ID Box */
-.referral-id-box {
-  background: linear-gradient(135deg, rgba(255, 214, 224, 0.3) 0%, rgba(255, 239, 239, 0.3) 100%);
-  border-radius: 12px;
-  padding: 20px;
+.referral-card-header {
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 50%, #B06CDA 100%);
+  color: white;
+  padding: 30px;
   text-align: center;
-  margin-bottom: 25px;
-  border: 1px dashed rgba(233, 64, 87, 0.3);
+  position: relative;
 }
 
-.referral-id-box h5 {
-  font-size: 1.1rem;
+.referral-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.referral-card-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.referral-card-body {
+  padding: 40px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8E54E9;
+  font-size: 1.2rem;
+}
+
+.custom-input {
+  height: 55px;
+  padding-left: 50px;
+  border-radius: 10px;
+  border: 1px solid rgba(142, 84, 233, 0.2);
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: #8E54E9;
+  box-shadow: 0 0 0 0.25rem rgba(142, 84, 233, 0.25);
+}
+
+.referral-id-container {
+  background: rgba(142, 84, 233, 0.05);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  border: 1px dashed rgba(142, 84, 233, 0.3);
+}
+
+.referral-id-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.referral-id-icon {
+  font-size: 1.3rem;
+  color: #8E54E9;
+  margin-right: 10px;
+}
+
+.referral-id-label h5 {
+  margin: 0;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
+  color: #343a40;
 }
 
 .referral-id {
-  font-size: 1.8rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #8A2387 0%, #E94057 50%, #F27121 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
+  background: linear-gradient(135deg, rgba(71, 118, 230, 0.05) 0%, rgba(142, 84, 233, 0.05) 100%);
+  padding: 15px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 8px;
+  letter-spacing: 2px;
+  color: #8E54E9;
+  border: 1px solid rgba(142, 84, 233, 0.2);
 }
 
-/* WhatsApp Button */
-.btn-success {
-  background: linear-gradient(135deg, #25d366 0%, #128C7E 100%);
+.whatsapp-button {
+  background: #25D366;
   border: none;
-  padding: 14px;
-  border-radius: 8px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
   font-weight: 600;
-  box-shadow: 0 8px 15px rgba(37, 211, 102, 0.2);
+  font-size: 1.1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
 }
 
-.btn-success:hover {
+.whatsapp-button:hover:not(:disabled) {
+  background: #128C7E;
   transform: translateY(-3px);
-  box-shadow: 0 12px 20px rgba(37, 211, 102, 0.3);
-  background: linear-gradient(135deg, #1eb45a 0%, #0e6a5e 100%);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
 }
 
-.btn-success:disabled {
+.whatsapp-button:disabled {
   background: #cccccc;
-  box-shadow: none;
-  transform: none;
+  cursor: not-allowed;
 }
 
-/* Responsive adjustments */
+.whatsapp-icon {
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, rgba(71, 118, 230, 0.05) 0%, rgba(142, 84, 233, 0.05) 50%, rgba(176, 108, 218, 0.05) 100%);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+.separator {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 50%, #B06CDA 100%);
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #6c757d;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background: white;
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(142, 84, 233, 0.1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(142, 84, 233, 0.15);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  color: #8E54E9;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, rgba(71, 118, 230, 0.1) 0%, rgba(142, 84, 233, 0.1) 100%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 100%);
+  color: white;
+  transform: rotate(360deg);
+  transition: all 0.5s ease;
+}
+
+.benefit-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #343a40;
+}
+
+.benefit-card p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .benefit-card {
+    margin-bottom: 30px;
+  }
+}
+
 @media (max-width: 768px) {
-  .card-header h2 {
-    font-size: 1.5rem;
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .referral-card-body {
+    padding: 25px;
   }
   
   .referral-id {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }

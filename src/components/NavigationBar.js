@@ -21,6 +21,7 @@ const NavigationBar = ({
 }) => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const auth = getAuth();
 
   // Handle scroll event to change navbar appearance
@@ -43,6 +44,7 @@ const NavigationBar = ({
     try {
       await signOut(auth);
       handleAuthSuccess('Logged out successfully');
+      setExpanded(false); // Close mobile menu after logout
     } catch (error) {
       handleAuthError(error);
     }
@@ -53,63 +55,83 @@ const NavigationBar = ({
     setAuthMode(authMode === 'signin' ? 'signup' : 'signin');
   };
 
+  // Handle mobile menu toggle
+  const toggleNavbar = () => {
+    setExpanded(!expanded);
+  };
+
+  // Close mobile menu when a link is clicked
+  const closeNavMenu = () => {
+    if (expanded) {
+      setExpanded(false);
+    }
+  };
+
   return (
     <>
       <Navbar 
         expand="lg" 
         fixed="top"
+        expanded={expanded}
+        onToggle={toggleNavbar}
         className={`navbar-custom ${scrolled ? 'scrolled' : ''} ${location.pathname === '/' ? 'navbar-transparent' : 'navbar-solid'}`}
       >
         <div className="navbar-inner">
-          <Navbar.Brand as={Link} to="/" className="brand">
+          <Navbar.Brand as={Link} to="/" className="brand" onClick={closeNavMenu}>
             <div className="logo-placeholder">VS</div>
             <span className="brand-text">VelvetSpace</span>
           </Navbar.Brand>
           
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle 
+            aria-controls="responsive-navbar-nav" 
+            className="navbar-toggler-custom"
+          />
           
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="main-nav">
-              <Nav.Link as={Link} to="/" className={location.pathname === '/' ? 'active' : ''}>
+              <Nav.Link as={Link} to="/" className={location.pathname === '/' ? 'active' : ''} onClick={closeNavMenu}>
                 <FaHome className="nav-icon" /> Home
               </Nav.Link>
               
-              <Nav.Link as={Link} to="/spaces" className={location.pathname === '/spaces' ? 'active' : ''}>
+              <Nav.Link as={Link} to="/spaces" className={location.pathname === '/spaces' ? 'active' : ''} onClick={closeNavMenu}>
                 <FaBuilding className="nav-icon" /> Spaces
               </Nav.Link>
               
-              <Nav.Link as={Link} to="/how-it-works" className={location.pathname === '/how-it-works' ? 'active' : ''}>
+              <Nav.Link as={Link} to="/how-it-works" className={location.pathname === '/how-it-works' ? 'active' : ''} onClick={closeNavMenu}>
                 <FaHandshake className="nav-icon" /> How It Works
               </Nav.Link>
               
-              <Nav.Link as={Link} to="/offerings" className={location.pathname === '/offerings' ? 'active' : ''}>
+              <Nav.Link as={Link} to="/offerings" className={location.pathname === '/offerings' ? 'active' : ''} onClick={closeNavMenu}>
                 <FaAward className="nav-icon" /> Offerings
               </Nav.Link>
               
-              <Nav.Link as={Link} to="/cities" className={location.pathname === '/cities' ? 'active' : ''}>
+              <Nav.Link as={Link} to="/cities" className={location.pathname === '/cities' ? 'active' : ''} onClick={closeNavMenu}>
                 <FaCity className="nav-icon" /> Cities
               </Nav.Link>
               
-              <Nav.Link as={Link} to="/our-homes" className={location.pathname === '/our-homes' ? 'active' : ''}>
+              <Nav.Link as={Link} to="/our-homes" className={location.pathname === '/our-homes' ? 'active' : ''} onClick={closeNavMenu}>
                 <FaHome className="nav-icon" /> Our Homes
               </Nav.Link>
               
               <div className="nav-divider"></div>
               
-              <Nav.Link as={Link} to="/career" className={location.pathname === '/career' ? 'active' : ''}>
+              <Nav.Link as={Link} to="/career" className={location.pathname === '/career' ? 'active' : ''} onClick={closeNavMenu}>
                 <FaBriefcase className="nav-icon" /> Career
               </Nav.Link>
               
-              <Nav.Link as={Link} to="/refer-a-friend" className={location.pathname === '/refer-a-friend' ? 'active' : ''}>
+              <Nav.Link as={Link} to="/refer-a-friend" className={location.pathname === '/refer-a-friend' ? 'active' : ''} onClick={closeNavMenu}>
                 <FaUserFriends className="nav-icon" /> Refer A Friend
               </Nav.Link>
               
               {currentUser ? (
                 <div className="user-nav-section">
-                  <Nav.Link as={Link} to="/dashboard" className={location.pathname === '/dashboard' ? 'active' : ''}>
+                  <Nav.Link as={Link} to="/dashboard" className={location.pathname === '/dashboard' ? 'active' : ''} onClick={closeNavMenu}>
                     <FaUserCircle className="nav-icon" /> My Account
                   </Nav.Link>
-                  <Button variant="outline-light" className="auth-button" onClick={handleLogout}>
+                  <Button variant="outline-light" className="auth-button" onClick={() => {
+                    handleLogout();
+                    closeNavMenu();
+                  }}>
                     <FaSignOutAlt className="nav-icon" /> Logout
                   </Button>
                 </div>
@@ -118,14 +140,20 @@ const NavigationBar = ({
                   <Button 
                     variant="outline-light" 
                     className="signin-button" 
-                    onClick={() => openAuthModal('signin')}
+                    onClick={() => {
+                      openAuthModal('signin');
+                      closeNavMenu();
+                    }}
                   >
                     <FaSignInAlt className="nav-icon" /> Sign In
                   </Button>
                   <Button 
                     variant="primary" 
                     className="signup-button" 
-                    onClick={() => openAuthModal('signup')}
+                    onClick={() => {
+                      openAuthModal('signup');
+                      closeNavMenu();
+                    }}
                   >
                     Sign Up
                   </Button>
