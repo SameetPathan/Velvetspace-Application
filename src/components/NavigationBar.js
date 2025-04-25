@@ -125,8 +125,10 @@ const NavigationBar = ({
               
               {currentUser ? (
                 <div className="user-nav-section">
-                  <Nav.Link as={Link} to="/dashboard" className={location.pathname === '/dashboard' ? 'active' : ''} onClick={closeNavMenu}>
-                    <FaUserCircle className="nav-icon" /> My Account
+                  <Nav.Link as={Link} to="/dashboard" onClick={() => {
+                    handleLogout();
+                    closeNavMenu();}}>
+                  <FaSignOutAlt className="nav-icon" /> Logout
                   </Nav.Link>
                   <Button variant="outline-light" className="auth-button" onClick={() => {
                     handleLogout();
