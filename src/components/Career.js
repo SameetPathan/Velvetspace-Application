@@ -35,7 +35,7 @@ function Career() {
   const database = getDatabase();
   
   // Admin email
-  const adminEmail = 'sameetpathanrs@gmail.com';
+  const adminEmail = 'admin@velvetspace.in';
   
   // Check if current user is admin
   useEffect(() => {

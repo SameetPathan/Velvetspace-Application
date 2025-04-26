@@ -103,7 +103,7 @@ const Home = () => {
             A home so good, <br/>
             <span className="gradient-text">you'll love the way you Live.</span>
           </h1>
-          <p className="hero-subtitle">Smart and efficient home interiors with superior quality materials</p>
+          <p className="hero-subtitle-home">Smart and efficient home interiors with superior quality materials</p>
           <div className="hero-buttons">
             <Button href="/our-homes" className="hero-button primary-button">
               Explore Our Designs

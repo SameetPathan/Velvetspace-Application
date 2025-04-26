@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Tab, Nav, Card, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Tab, Nav, Card, Spinner, Dropdown } from 'react-bootstrap';
 import { getAuth } from 'firebase/auth';
-import { getDatabase, ref, onValue, query, orderByChild, equalTo } from 'firebase/database';
+import { getDatabase, ref, onValue } from 'firebase/database';
 import { motion } from 'framer-motion';
 import './Spaces.css';
 import AdminPanel from './AdminPanel';
@@ -22,6 +22,7 @@ function Spaces() {
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [activeTab, setActiveTab] = useState('living-room');
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   
   const auth = getAuth();
   const database = getDatabase();
@@ -29,9 +30,8 @@ function Spaces() {
   // Check if current user is admin
   useEffect(() => {
     const checkAdminStatus = async () => {
-      debugger
       const currentUser = auth.currentUser;
-      if (currentUser && currentUser.email === 'sameetpathanrs@gmail.com') {
+      if (currentUser && currentUser.email === 'admin@velvetspace.in') {
         setIsAdmin(true);
       } else {
         setIsAdmin(false);
@@ -40,6 +40,16 @@ function Spaces() {
     
     checkAdminStatus();
   }, [auth]);
+  
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   // Fetch images from Realtime Database
   useEffect(() => {
@@ -98,11 +108,6 @@ function Spaces() {
     };
     
     fetchImages();
-    
-    // Clean up function
-    return () => {
-      // No need to detach listeners manually with Realtime Database as they're automatically detached when component unmounts
-    };
   }, [database]);
   
   // Animation variants
@@ -134,6 +139,53 @@ function Spaces() {
       ...prevImages,
       [category]: newImages
     }));
+  };
+
+  // Get active category name
+  const getActiveCategoryName = () => {
+    const activeCategory = categories.find(category => category.id === activeTab);
+    return activeCategory ? activeCategory.name : '';
+  };
+
+  // Render category navigation based on screen size
+  const renderCategoryNavigation = () => {
+    if (isMobile) {
+      return (
+        <div className="mobile-category-selector">
+          <Dropdown className="w-100 mb-4">
+            <Dropdown.Toggle variant="outline-primary" className="category-dropdown w-100">
+              {getActiveCategoryName()}
+            </Dropdown.Toggle>
+            <Dropdown.Menu className="w-100">
+              {categories.map((category) => (
+                <Dropdown.Item 
+                  key={category.id}
+                  active={activeTab === category.id}
+                  onClick={() => setActiveTab(category.id)}
+                >
+                  {category.name}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+      );
+    } else {
+      return (
+        <Nav className="spaces-nav">
+          {categories.map((category) => (
+            <Nav.Item key={category.id}>
+              <Nav.Link 
+                eventKey={category.id}
+                className={activeTab === category.id ? 'active' : ''}
+              >
+                {category.name}
+              </Nav.Link>
+            </Nav.Item>
+          ))}
+        </Nav>
+      );
+    }
   };
   
   return (
@@ -184,20 +236,10 @@ function Spaces() {
               <Tab.Container 
                 id="spaces-tabs" 
                 defaultActiveKey="living-room"
+                activeKey={activeTab}
                 onSelect={(key) => setActiveTab(key)}
               >
-                <Nav className="spaces-nav">
-                  {categories.map((category) => (
-                    <Nav.Item key={category.id}>
-                      <Nav.Link 
-                        eventKey={category.id}
-                        className={activeTab === category.id ? 'active' : ''}
-                      >
-                        {category.name}
-                      </Nav.Link>
-                    </Nav.Item>
-                  ))}
-                </Nav>
+                {renderCategoryNavigation()}
                 
                 <Tab.Content>
                   {categories.map((category) => (
@@ -264,7 +306,6 @@ function Spaces() {
                 <p className="cta-text">
                   Ready to bring these stunning designs to your home? Our expert team is ready to help.
                 </p>
-                
               </motion.div>
             </Col>
           </Row>

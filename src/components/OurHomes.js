@@ -43,7 +43,7 @@ function OurHomes() {
       const user = auth.currentUser;
       setCurrentUser(user);
       
-      if (user && user.email === 'sameetpathanrs@gmail.com') {
+      if (user && user.email === 'admin@velvetspace.in') {
         setIsAdmin(true);
       } else {
         setIsAdmin(false);
